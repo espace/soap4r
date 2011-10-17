@@ -246,12 +246,12 @@ private
   ENCODE_CHAR_REGEXP = {}
 
   EncodeMap = {
-    '&' => '&amp;',
-    '<' => '&lt;',
-    '>' => '&gt;',
-    '"' => '&quot;',
-    '\'' => '&apos;',
-    "\r" => '&#xd;'
+    '&' => '&',
+    '<' => '<',
+    '>' => '>',
+    '"' => '"',
+    '\'' => '\'',
+    "\r" => '\r'
   }
 
   def get_encoded(str)
