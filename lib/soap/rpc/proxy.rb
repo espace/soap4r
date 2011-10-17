@@ -59,7 +59,7 @@ public
     @default_encodingstyle = nil
     @generate_explicit_type = nil
     @use_default_namespace = false
-    @return_response_as_xml = false
+    @return_response_as_xml = true
     @headerhandler = Header::HandlerSet.new
     @filterchain = Filter::FilterChain.new
     @mapping_registry = nil
