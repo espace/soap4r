@@ -71,7 +71,7 @@ public
         ns.known_tag[default_ns] = default_tag
       end
     end
-    @buf << xmldecl
+    # @buf << xmldecl
     encode_data(ns, obj, nil)
 
     @handlers.each do |uri, handler|
