@@ -900,6 +900,7 @@ public
 
   def []=(*idxary)
     value = idxary.slice!(-1)
+    @item_name = value.type.name.sub("Type","") # added by Hajer  - 2-Nov-2011
     if idxary.size != @rank
       raise ArgumentError.new("given #{idxary.size} params(#{idxary}) does not match rank: #{@rank}")
     end
@@ -913,7 +914,8 @@ public
     data = retrieve(idxary[0, idxary.size - 1])
     data[idxary.last] = value
     if value.is_a?(SOAPType)
-      value.elename = ITEM_NAME
+      # value.elename = ITEM_NAME #  commented by Hajer  - 2-Nov-2011
+      value.elename = XSD::QName.new(nil, @item_name) # added by Hajer  - 2-Nov-2011
       # Sync type
       unless @type.name
 	@type = XSD::QName.new(value.type.namespace,
